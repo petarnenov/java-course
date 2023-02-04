@@ -14,13 +14,8 @@ public class App {
         game.printPlayers();
         System.out.println(game.getWinner());
 
-        String in = System.console().readLine("Enter your name:");
-        System.out.println(in);
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter your name:");
-        String name = scanner.nextLine();
-        System.out.println(name);
+        Monster m1 = new Monster("Bear", 0, 3, 0, 100, 1);
+        System.out.println(m1.name());
 
     }
 }
