@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
@@ -16,6 +15,8 @@ public class App {
 
         Monster m1 = new Monster("Bear", 0, 3, 0, 100, 1);
         System.out.println(m1.name());
+
+        System.out.println(game);
 
     }
 }

@@ -1,7 +1,15 @@
+import java.util.Arrays;
+
 public class Game {
     Player[] players;
     int maxPlayers;
     int currentPlayer = 0;
+
+    @Override
+    public String toString() {
+        return "Game [players=" + Arrays.toString(players) + ", maxPlayers=" + maxPlayers + ", currentPlayer="
+                + currentPlayer + "]";
+    }
 
     Game(int maxPlayers) {
         this.maxPlayers = maxPlayers;
@@ -28,8 +36,8 @@ public class Game {
     }
 
     public void printPlayers() {
-        
-        for (Player player: this.players) {
+
+        for (Player player : this.players) {
             System.out.println(player.name);
             System.out.println(player.score);
             System.out.println(player.lives);
