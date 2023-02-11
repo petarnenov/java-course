@@ -35,7 +35,7 @@ public class ProblemsTest {
     public void p168_2() {
         assert Problems.p168(27).compareTo("AA") == 0;
     }
-    
+
     @Test
     public void p168_3() {
         assert Problems.p168(28).compareTo("AB") == 0;
@@ -44,5 +44,36 @@ public class ProblemsTest {
     @Test
     public void p168_4() {
         assert Problems.p168(701).compareTo("ZY") == 0;
+    }
+
+    @Test
+    public void p177_1() {
+        assert Problems.p177("42") == 42;
+    }
+
+    @Test
+    public void p177_2() {
+        int result = Problems.p177("00000-12a2a3");
+        assert Problems.p177("00000-12a2a3") == 0;
+    }
+
+    @Test
+    public void p177_3() {
+        assert Problems.p177("     -42") == -42;
+    }
+
+    @Test
+    public void p177_4() {
+        assert Problems.p177("4193 erwer erer") == 4193;
+    }
+
+    @Test
+    public void p177_5() {
+        assert Problems.p177("-91283472332") == -2147483648;
+    }
+
+    @Test
+    public void p177_6() {
+        assert Problems.p177("18446744073709551617") == 2147483647;
     }
 }
