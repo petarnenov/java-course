@@ -6,6 +6,8 @@ public enum Colors {
     BLACK("\033[0;30m"), // BLACK
     RED("\033[0;31m"), // RED
     GREEN("\033[0;32m"), // GREEN
+    GREEN_BOLD("\033[2;32m"), // GREEN BOLD
+    GREEN_BRIGHT("\033[2;93m"), // GREEN BOLD BRIGHT
     YELLOW("\033[0;33m"), // YELLOW
     BLUE("\033[0;34m"), // BLUE
     MAGENTA("\033[0;35m"), // MAGENTA
