@@ -6,6 +6,12 @@ public class GameOfLife {
     int[][] board;
     int[][] nextBoard;
 
+    // pattern for counting neighbors
+    // * * *
+    // * C *
+    // * * *
+    int[][] neighborsPattern = { { -1, -1 }, { -1, 0 }, { -1, 1 }, { 0, -1 }, { 0, 1 }, { 1, -1 }, { 1, 0 }, { 1, 1 } };
+
     public GameOfLife(int[][] board) {
         this.board = board.clone();
         this.nextBoard = new int[board.length][board[0].length];
@@ -18,7 +24,7 @@ public class GameOfLife {
     public void next() {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
-                int neighbors = countNeighbors(i, j);
+                int neighbors = countNeighbors(i, j, neighborsPattern);
                 if (board[i][j] == 1) {
                     if (neighbors == 2 || neighbors == 3) {
                         nextBoard[i][j] = 1;
@@ -63,6 +69,21 @@ public class GameOfLife {
         return count;
     }
 
+
+private int countNeighbors(int i, int j, int[][] pattern) {
+        int count = 0;
+        for (int k = 0; k < neighborsPattern.length; k++) {
+            int x = i + neighborsPattern[k][0];
+            int y = j + neighborsPattern[k][1];
+            if (x >= 0 && x < board.length && y >= 0 && y < board[0].length) {
+                if (board[x][y] == 1) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
     public void printBoard() {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
@@ -89,22 +110,22 @@ public class GameOfLife {
         int[][] board = new int[30][30];
 
         // lightweight space ship
-        // board[14][14] = 1;
-        // board[14][17] = 1;
-        // board[15][13] = 1;
-        // board[16][13] = 1;
-        // board[16][17] = 1;
-        // board[17][13] = 1;
-        // board[17][14] = 1;
-        // board[17][15] = 1;
-        // board[17][16] = 1;
+        board[14][14] = 1;
+        board[14][17] = 1;
+        board[15][13] = 1;
+        board[16][13] = 1;
+        board[16][17] = 1;
+        board[17][13] = 1;
+        board[17][14] = 1;
+        board[17][15] = 1;
+        board[17][16] = 1;
 
         // F-pentomino
-        board[14][15] = 1;
-        board[14][16] = 1;
-        board[15][14] = 1;
-        board[15][15] = 1;
-        board[16][15] = 1;
+        // board[14][15] = 1;
+        // board[14][16] = 1;
+        // board[15][14] = 1;
+        // board[15][15] = 1;
+        // board[16][15] = 1;
 
         GameOfLife game = new GameOfLife(board);
 
