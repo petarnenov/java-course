@@ -69,7 +69,6 @@ public class GameOfLife {
         return count;
     }
 
-
 private int countNeighbors(int i, int j, int[][] pattern) {
         int count = 0;
         for (int k = 0; k < neighborsPattern.length; k++) {
